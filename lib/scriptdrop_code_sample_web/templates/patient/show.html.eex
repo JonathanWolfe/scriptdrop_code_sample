@@ -1,0 +1,53 @@
+<h1>Show Patient</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @patient.email %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @patient.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @patient.last_name %>
+  </li>
+
+  <li>
+    <strong>Address1:</strong>
+    <%= @patient.address1 %>
+  </li>
+
+  <li>
+    <strong>Address2:</strong>
+    <%= @patient.address2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @patient.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @patient.state %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @patient.zip %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @patient.phone %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.patient_path(@conn, :edit, @patient) %></span>
+<span><%= link "Back", to: Routes.patient_path(@conn, :index) %></span>
