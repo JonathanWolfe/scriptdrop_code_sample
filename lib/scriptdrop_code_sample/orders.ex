@@ -35,7 +35,11 @@ defmodule ScriptdropCodeSample.Orders do
       ** (Ecto.NoResultsError)
 
   """
-  def get_order!(id), do: Repo.get!(Order, id)
+  def get_order!(id) do
+    order = Repo.get!(Order, id)
+
+    Repo.preload(order, [:pharmacy, :patient])
+  end
 
   @doc """
   Creates a order.

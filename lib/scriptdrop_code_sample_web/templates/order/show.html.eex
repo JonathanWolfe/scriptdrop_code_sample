@@ -22,6 +22,16 @@
     <%= @order.canceled %>
   </li>
 
+  <li>
+    <strong>Pharmacy:</strong>
+    <%= link @order.pharmacy.display_name, to: Routes.pharmacy_path(@conn, :show, @order.pharmacy) %>
+  </li>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= link @order.patient.first_name <> " " <> @order.patient.last_name, to: Routes.patient_path(@conn, :show, @order.patient) %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.order_path(@conn, :edit, @order) %></span>

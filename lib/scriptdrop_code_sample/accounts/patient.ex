@@ -20,6 +20,10 @@ defmodule ScriptdropCodeSample.Accounts.Patient do
     timestamps()
   end
 
+  def full_name(patient) do
+    patient.first_name <> " " <> patient.last_name
+  end
+
   @doc false
   def changeset(patient, attrs) do
     patient

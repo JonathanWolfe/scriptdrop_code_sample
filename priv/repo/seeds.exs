@@ -129,40 +129,50 @@ order1 =
   ScriptdropCodeSample.Repo.insert!(%ScriptdropCodeSample.Orders.Order{
     completed: false,
     canceled: false,
-    pickup_time: DateTime.utc_now(),
-    dropoff_time: DateTime.utc_now()
+    pickup_time: DateTime.truncate(DateTime.utc_now(), :second),
+    dropoff_time: DateTime.truncate(DateTime.utc_now(), :second),
+    pharmacy_id: 1,
+    patient_id: 1
   })
 
 order2 =
   ScriptdropCodeSample.Repo.insert!(%ScriptdropCodeSample.Orders.Order{
     completed: false,
     canceled: false,
-    pickup_time: DateTime.utc_now(),
-    dropoff_time: DateTime.utc_now()
+    pickup_time: DateTime.truncate(DateTime.utc_now(), :second),
+    dropoff_time: DateTime.truncate(DateTime.utc_now(), :second),
+    pharmacy_id: 1,
+    patient_id: 2
   })
 
 order3 =
   ScriptdropCodeSample.Repo.insert!(%ScriptdropCodeSample.Orders.Order{
     completed: false,
     canceled: false,
-    pickup_time: DateTime.utc_now(),
-    dropoff_time: DateTime.utc_now()
+    pickup_time: DateTime.truncate(DateTime.utc_now(), :second),
+    dropoff_time: DateTime.truncate(DateTime.utc_now(), :second),
+    pharmacy_id: 2,
+    patient_id: 2
   })
 
 order4 =
   ScriptdropCodeSample.Repo.insert!(%ScriptdropCodeSample.Orders.Order{
     completed: false,
     canceled: false,
-    pickup_time: DateTime.utc_now(),
-    dropoff_time: DateTime.utc_now()
+    pickup_time: DateTime.truncate(DateTime.utc_now(), :second),
+    dropoff_time: DateTime.truncate(DateTime.utc_now(), :second),
+    pharmacy_id: 3,
+    patient_id: 3
   })
 
 order5 =
   ScriptdropCodeSample.Repo.insert!(%ScriptdropCodeSample.Orders.Order{
     completed: false,
     canceled: false,
-    pickup_time: DateTime.utc_now(),
-    dropoff_time: DateTime.utc_now()
+    pickup_time: DateTime.truncate(DateTime.utc_now(), :second),
+    dropoff_time: DateTime.truncate(DateTime.utc_now(), :second),
+    pharmacy_id: 3,
+    patient_id: 3
   })
 
 # Create courier-pharmacy relationships
@@ -178,6 +188,3 @@ relation_changeset2 = courier_changeset2 |> Ecto.Changeset.put_assoc(:pharmacies
 
 ScriptdropCodeSample.Repo.update!(relation_changeset1)
 ScriptdropCodeSample.Repo.update!(relation_changeset2)
-
-# Create Order relationships
-order1_assoc = Ecto.build_assoc(pharmacy1, :orders, order1)
