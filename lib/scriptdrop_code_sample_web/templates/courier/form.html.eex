@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :email %>
-  <%= text_input f, :email %>
+  <%= email_input f, :email %>
   <%= error_tag f, :email %>
 
   <%= label f, :display_name %>
@@ -30,11 +30,11 @@
   <%= error_tag f, :state %>
 
   <%= label f, :zip %>
-  <%= number_input f, :zip %>
+  <%= text_input f, :zip %>
   <%= error_tag f, :zip %>
 
   <%= label f, :phone %>
-  <%= number_input f, :phone %>
+  <%= text_input f, :phone %>
   <%= error_tag f, :phone %>
 
   <div>
