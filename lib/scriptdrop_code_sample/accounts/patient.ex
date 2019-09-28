@@ -19,8 +19,18 @@ defmodule ScriptdropCodeSample.Accounts.Patient do
   @doc false
   def changeset(patient, attrs) do
     patient
-    |> cast(attrs, [:email, :first_name, :last_name, :address1, :address2, :city, :state, :zip, :phone])
-    |> validate_required([:email, :first_name, :last_name, :address1, :address2, :city, :state, :zip, :phone])
+    |> cast(attrs, [
+      :email,
+      :first_name,
+      :last_name,
+      :address1,
+      :address2,
+      :city,
+      :state,
+      :zip,
+      :phone
+    ])
+    |> validate_required([:email, :first_name, :last_name, :address1, :city, :state, :zip, :phone])
     |> unique_constraint(:email)
   end
 end

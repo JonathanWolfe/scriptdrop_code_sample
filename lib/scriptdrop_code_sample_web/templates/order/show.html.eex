@@ -1,0 +1,28 @@
+<h1>Show Order</h1>
+
+<ul>
+
+  <li>
+    <strong>Pickup time:</strong>
+    <%= @order.pickup_time %>
+  </li>
+
+  <li>
+    <strong>Dropoff time:</strong>
+    <%= @order.dropoff_time %>
+  </li>
+
+  <li>
+    <strong>Completed:</strong>
+    <%= @order.completed %>
+  </li>
+
+  <li>
+    <strong>Canceled:</strong>
+    <%= @order.canceled %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.order_path(@conn, :edit, @order) %></span>
+<span><%= link "Back", to: Routes.order_path(@conn, :index) %></span>

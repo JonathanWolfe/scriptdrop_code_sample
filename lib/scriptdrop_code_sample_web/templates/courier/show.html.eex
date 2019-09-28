@@ -1,0 +1,48 @@
+<h1>Show Courier</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @courier.email %>
+  </li>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @courier.display_name %>
+  </li>
+
+  <li>
+    <strong>Address1:</strong>
+    <%= @courier.address1 %>
+  </li>
+
+  <li>
+    <strong>Address2:</strong>
+    <%= @courier.address2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @courier.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @courier.state %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @courier.zip %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @courier.phone %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.courier_path(@conn, :edit, @courier) %></span>
+<span><%= link "Back", to: Routes.courier_path(@conn, :index) %></span>
