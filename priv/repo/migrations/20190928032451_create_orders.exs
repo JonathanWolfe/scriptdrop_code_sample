@@ -3,19 +3,17 @@ defmodule ScriptdropCodeSample.Repo.Migrations.CreateOrders do
 
   def change do
     create table(:orders) do
-      add :pickup_time, :utc_datetime
-      add :dropoff_time, :utc_datetime
+      add :pickup_time, :utc_datetime, null: false
+      add :dropoff_time, :utc_datetime, null: false
       add :completed, :boolean, default: false, null: false
       add :canceled, :boolean, default: false, null: false
-      add :courier, references(:couriers, on_delete: :nothing)
-      add :pharmacy, references(:pharmacies, on_delete: :nothing)
-      add :patient, references(:patients, on_delete: :nothing)
+      add :pharmacy_id, references(:pharmacies, on_delete: :nothing)
+      add :patient_id, references(:patients, on_delete: :nothing)
 
       timestamps()
     end
 
-    create index(:orders, [:courier])
-    create index(:orders, [:pharmacy])
-    create index(:orders, [:patient])
+    create index(:orders, [:pharmacy_id])
+    create index(:orders, [:patient_id])
   end
 end

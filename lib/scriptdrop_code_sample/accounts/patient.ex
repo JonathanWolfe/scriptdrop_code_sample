@@ -2,6 +2,8 @@ defmodule ScriptdropCodeSample.Accounts.Patient do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias ScriptdropCodeSample.Orders.Order
+
   schema "patients" do
     field :address1, :string
     field :address2, :string
@@ -9,9 +11,11 @@ defmodule ScriptdropCodeSample.Accounts.Patient do
     field :email, :string
     field :first_name, :string
     field :last_name, :string
-    field :phone, :integer
+    field :phone, :string
     field :state, :string
-    field :zip, :integer
+    field :zip, :string
+
+    has_many :orders, Order
 
     timestamps()
   end
@@ -30,7 +34,10 @@ defmodule ScriptdropCodeSample.Accounts.Patient do
       :zip,
       :phone
     ])
-    |> validate_required([:email, :first_name, :last_name, :address1, :city, :state, :zip, :phone])
+    |> validate_required(
+      [:email, :first_name, :last_name, :address1, :city, :state, :zip, :phone],
+      trim: true
+    )
     |> unique_constraint(:email)
   end
 end

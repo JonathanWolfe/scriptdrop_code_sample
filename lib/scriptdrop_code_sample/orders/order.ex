@@ -2,14 +2,17 @@ defmodule ScriptdropCodeSample.Orders.Order do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias ScriptdropCodeSample.Accounts.Pharmacy
+  alias ScriptdropCodeSample.Accounts.Patient
+
   schema "orders" do
     field :canceled, :boolean, default: false
     field :completed, :boolean, default: false
     field :dropoff_time, :utc_datetime
     field :pickup_time, :utc_datetime
-    field :courier, :id
-    field :pharmacy, :id
-    field :patient, :id
+
+    belongs_to :pharmacy, Pharmacy
+    belongs_to :patient, Patient
 
     timestamps()
   end

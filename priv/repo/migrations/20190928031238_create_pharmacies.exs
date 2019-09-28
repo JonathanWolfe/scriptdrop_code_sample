@@ -9,8 +9,8 @@ defmodule ScriptdropCodeSample.Repo.Migrations.CreatePharmacies do
       add :address2, :string
       add :city, :string
       add :state, :string
-      add :zip, :integer
-      add :phone, :integer
+      add :zip, :string
+      add :phone, :string
 
       timestamps()
     end
