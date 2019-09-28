@@ -17,6 +17,11 @@ defmodule ScriptdropCodeSampleWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/couriers", CourierController
+    resources "/patients", PatientController
+    resources "/pharmacies", PharmacyController
+    resources "/orders", OrderController
   end
 
   # Other scopes may use custom stacks.
