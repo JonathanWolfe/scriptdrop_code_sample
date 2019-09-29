@@ -6,9 +6,39 @@ defmodule ScriptdropCodeSample.AccountsTest do
   describe "patients" do
     alias ScriptdropCodeSample.Accounts.Patient
 
-    @valid_attrs %{address1: "some address1", address2: "some address2", city: "some city", email: "some email", first_name: "some first_name", last_name: "some last_name", phone: 42, state: "some state", zip: 42}
-    @update_attrs %{address1: "some updated address1", address2: "some updated address2", city: "some updated city", email: "some updated email", first_name: "some updated first_name", last_name: "some updated last_name", phone: 43, state: "some updated state", zip: 43}
-    @invalid_attrs %{address1: nil, address2: nil, city: nil, email: nil, first_name: nil, last_name: nil, phone: nil, state: nil, zip: nil}
+    @valid_attrs %{
+      address1: "some address1",
+      address2: "some address2",
+      city: "some city",
+      email: "some email",
+      first_name: "some first_name",
+      last_name: "some last_name",
+      phone: "555-555-5555",
+      state: "some state",
+      zip: "25222"
+    }
+    @update_attrs %{
+      address1: "some updated address1",
+      address2: "some updated address2",
+      city: "some updated city",
+      email: "some updated email",
+      first_name: "some updated first_name",
+      last_name: "some updated last_name",
+      phone: "(555) 555-5555",
+      state: "some updated state",
+      zip: "88558"
+    }
+    @invalid_attrs %{
+      address1: nil,
+      address2: nil,
+      city: nil,
+      email: nil,
+      first_name: nil,
+      last_name: nil,
+      phone: nil,
+      state: nil,
+      zip: nil
+    }
 
     def patient_fixture(attrs \\ %{}) do
       {:ok, patient} =
@@ -37,9 +67,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert patient.email == "some email"
       assert patient.first_name == "some first_name"
       assert patient.last_name == "some last_name"
-      assert patient.phone == 42
+      assert patient.phone == "555-555-5555"
       assert patient.state == "some state"
-      assert patient.zip == 42
+      assert patient.zip == "25222"
     end
 
     test "create_patient/1 with invalid data returns error changeset" do
@@ -55,9 +85,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert patient.email == "some updated email"
       assert patient.first_name == "some updated first_name"
       assert patient.last_name == "some updated last_name"
-      assert patient.phone == 43
+      assert patient.phone == "(555) 555-5555"
       assert patient.state == "some updated state"
-      assert patient.zip == 43
+      assert patient.zip == "88558"
     end
 
     test "update_patient/2 with invalid data returns error changeset" do
@@ -81,9 +111,36 @@ defmodule ScriptdropCodeSample.AccountsTest do
   describe "pharmacies" do
     alias ScriptdropCodeSample.Accounts.Pharmacy
 
-    @valid_attrs %{address1: "some address1", address2: "some address2", city: "some city", display_name: "some display_name", email: "some email", phone: 42, state: "some state", zip: 42}
-    @update_attrs %{address1: "some updated address1", address2: "some updated address2", city: "some updated city", display_name: "some updated display_name", email: "some updated email", phone: 43, state: "some updated state", zip: 43}
-    @invalid_attrs %{address1: nil, address2: nil, city: nil, display_name: nil, email: nil, phone: nil, state: nil, zip: nil}
+    @valid_attrs %{
+      address1: "some address1",
+      address2: "some address2",
+      city: "some city",
+      display_name: "some display_name",
+      email: "some email",
+      phone: "555-555-5555",
+      state: "some state",
+      zip: "25222"
+    }
+    @update_attrs %{
+      address1: "some updated address1",
+      address2: "some updated address2",
+      city: "some updated city",
+      display_name: "some updated display_name",
+      email: "some updated email",
+      phone: "(555) 555-5555",
+      state: "some updated state",
+      zip: "88558"
+    }
+    @invalid_attrs %{
+      address1: nil,
+      address2: nil,
+      city: nil,
+      display_name: nil,
+      email: nil,
+      phone: nil,
+      state: nil,
+      zip: nil
+    }
 
     def pharmacy_fixture(attrs \\ %{}) do
       {:ok, pharmacy} =
@@ -111,9 +168,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert pharmacy.city == "some city"
       assert pharmacy.display_name == "some display_name"
       assert pharmacy.email == "some email"
-      assert pharmacy.phone == 42
+      assert pharmacy.phone == "555-555-5555"
       assert pharmacy.state == "some state"
-      assert pharmacy.zip == 42
+      assert pharmacy.zip == "25222"
     end
 
     test "create_pharmacy/1 with invalid data returns error changeset" do
@@ -128,9 +185,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert pharmacy.city == "some updated city"
       assert pharmacy.display_name == "some updated display_name"
       assert pharmacy.email == "some updated email"
-      assert pharmacy.phone == 43
+      assert pharmacy.phone == "(555) 555-5555"
       assert pharmacy.state == "some updated state"
-      assert pharmacy.zip == 43
+      assert pharmacy.zip == "88558"
     end
 
     test "update_pharmacy/2 with invalid data returns error changeset" do
@@ -154,9 +211,36 @@ defmodule ScriptdropCodeSample.AccountsTest do
   describe "couriers" do
     alias ScriptdropCodeSample.Accounts.Courier
 
-    @valid_attrs %{address1: "some address1", address2: "some address2", city: "some city", display_name: "some display_name", email: "some email", phone: 42, state: "some state", zip: 42}
-    @update_attrs %{address1: "some updated address1", address2: "some updated address2", city: "some updated city", display_name: "some updated display_name", email: "some updated email", phone: 43, state: "some updated state", zip: 43}
-    @invalid_attrs %{address1: nil, address2: nil, city: nil, display_name: nil, email: nil, phone: nil, state: nil, zip: nil}
+    @valid_attrs %{
+      address1: "some address1",
+      address2: "some address2",
+      city: "some city",
+      display_name: "some display_name",
+      email: "some email",
+      phone: "555-555-5555",
+      state: "some state",
+      zip: "25222"
+    }
+    @update_attrs %{
+      address1: "some updated address1",
+      address2: "some updated address2",
+      city: "some updated city",
+      display_name: "some updated display_name",
+      email: "some updated email",
+      phone: "(555) 555-5555",
+      state: "some updated state",
+      zip: "88558"
+    }
+    @invalid_attrs %{
+      address1: nil,
+      address2: nil,
+      city: nil,
+      display_name: nil,
+      email: nil,
+      phone: nil,
+      state: nil,
+      zip: nil
+    }
 
     def courier_fixture(attrs \\ %{}) do
       {:ok, courier} =
@@ -184,9 +268,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert courier.city == "some city"
       assert courier.display_name == "some display_name"
       assert courier.email == "some email"
-      assert courier.phone == 42
+      assert courier.phone == "555-555-5555"
       assert courier.state == "some state"
-      assert courier.zip == 42
+      assert courier.zip == "25222"
     end
 
     test "create_courier/1 with invalid data returns error changeset" do
@@ -201,9 +285,9 @@ defmodule ScriptdropCodeSample.AccountsTest do
       assert courier.city == "some updated city"
       assert courier.display_name == "some updated display_name"
       assert courier.email == "some updated email"
-      assert courier.phone == 43
+      assert courier.phone == "(555) 555-5555"
       assert courier.state == "some updated state"
-      assert courier.zip == 43
+      assert courier.zip == "88558"
     end
 
     test "update_courier/2 with invalid data returns error changeset" do

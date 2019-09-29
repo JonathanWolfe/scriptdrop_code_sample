@@ -7,6 +7,8 @@
       <th>Dropoff time</th>
       <th>Completed</th>
       <th>Canceled</th>
+      <th>Pharmacy</th>
+      <th>Patient</th>
 
       <th></th>
     </tr>
@@ -18,6 +20,8 @@
       <td><%= order.dropoff_time %></td>
       <td><%= order.completed %></td>
       <td><%= order.canceled %></td>
+      <td><%= link order.pharmacy.display_name, to: Routes.pharmacy_path(@conn, :show, order.pharmacy) %></td>
+      <td><%= link order.patient.first_name <> " " <> order.patient.last_name, to: Routes.patient_path(@conn, :show, order.patient) %></td>
 
       <td>
         <span><%= link "Show", to: Routes.order_path(@conn, :show, order) %></span>

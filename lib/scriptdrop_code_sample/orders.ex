@@ -19,6 +19,7 @@ defmodule ScriptdropCodeSample.Orders do
   """
   def list_orders do
     Repo.all(Order)
+    |> Repo.preload([:pharmacy, :patient])
   end
 
   @doc """

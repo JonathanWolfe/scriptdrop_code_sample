@@ -21,6 +21,14 @@
   <%= checkbox f, :canceled %>
   <%= error_tag f, :canceled %>
 
+  <%= label f, :patient_id %>
+  <%= number_input f, :patient_id %>
+  <%= error_tag f, :patient_id %>
+
+  <%= label f, :pharmacy_id %>
+  <%= number_input f, :pharmacy_id %>
+  <%= error_tag f, :pharmacy_id %>
+
   <div>
     <%= submit "Save" %>
   </div>
